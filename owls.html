@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Owl</title>
+
+	<style>
+		body
+		{
+			background: yellow;
+			font-size: 24px;
+			padding: 10%;
+		}
+
+		img, iframe
+		{
+			border-radius: 20px;
+			margin: 10px;
+			float: top;
+			box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+		}
+
+		#nav
+		{
+			left: 50px;
+			top: 0px;
+			position: fixed;
+			background-color: rgb(250, 200, 0);
+			padding: 15px;
+			border-radius: 10px;
+			opacity: 0.75;
+		}
+
+
+
+a
+  {
+  	background: yellow;
+  	border-radius: 5px;
+  	padding: 5px;
+  	opacity: 0.85;
+  }
+
+  a:hover
+  {
+  	padding: 7px;
+  }
+
+  #quote
+  {
+  	font-size: 16px;
+  	background-color: rgba(0, 0, 0, .5);
+  	padding: 5px;
+  	border-radius: 20px;
+  }
+
+		@media only screen and (max-width: 600px) {
+  img
+  {
+  	width: 200px;
+  	margin: 0px;
+  }
+
+
+}
+
+	</style>
+	</head>
+<body onload="randomizeHoot()">
+	<div id = "quote">
+<blockquote cite = "https://en.wikipedia.org/wiki/Owl">
+	Owls are birds from the order Strigiformes, which includes over 200 species of mostly solitary and nocturnal birds of prey typified by an upright stance, a large, broad head, binocular vision, binaural hearing, sharp talons, and feathers adapted for silent flight. Exceptions include the diurnal northern hawk-owl and the gregarious burrowing owl.
+
+Owls hunt mostly small mammals, insects, and other birds, although a few species specialize in hunting fish. They are found in all regions of the Earth except polar ice caps and some remote islands.
+
+Owls are divided into two families: the true (or typical) owl family, Strigidae, and the barn-owl family, Tytonidae.
+<br>
+<br>
+-wikipedia
+</blockquote>
+
+</div>
+<span id = "nav">  <a href = "#pics">pics</a>  <a href = "#vids">vids</a> </span>
+<p>I like owls:</p>
+
+<h2 id = "pics">Pics:</h2>
+
+ <img src = "https://www.allaboutbirds.org/guide/assets/photo/60394861-480px.jpg" 
+ title = "barred owl" alt = "barred owl">
+
+ <img src = "https://abcbirds.org/wp-content/uploads/2020/01/barn-owl-.jpg" title = "barn owl"
+ alt = "barred owl">
+
+<h2 id = "vids">Vids:</h2>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/aqMZ56l5fuI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/0GTv2PpB8O4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<script>
+
+var hoot1 = new Audio("owl.wav");
+var hoot2 = new Audio("owlhoot2.wav");
+var hoot3 = new Audio("owlhoot3.wav");
+
+var hootArray = [hoot1, hoot2, hoot3];
+
+function hoo() {
+	var rand = Math.floor(Math.random() * 3);
+	var hoot = hootArray[rand];
+  hoot.play();
+
+  
+
+
+
+  randomizeHoot();
+}
+
+
+
+//causes hoo function to play at random intervals
+function randomizeHoot() {
+  var min = 15,
+    max = 25;
+  var rand = Math.floor(Math.random() * (max - min + 1) + min); //
+  setTimeout(hoo, rand * 1000);
+}
+
+
+</script>
+
+</body>
+</html>
